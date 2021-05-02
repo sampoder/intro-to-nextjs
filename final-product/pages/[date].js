@@ -1,6 +1,10 @@
 import MainComponent from "../components/main";
+import Error from "next/error";
 
-export default function App({ data, today }) {
+export default function App({ data, today, notFound }) {
+  if (notFound) {
+    return <Error statusCode={"404"} />;
+  }
   return (
     <>
       <MainComponent isToday={today} {...data} />
@@ -25,21 +29,27 @@ export async function getStaticPaths() {
         date: getDateX(currentDate, x),
       },
     })),
-    fallback: true
+    fallback: true,
   };
 }
 
 export async function getStaticProps({ params }) {
+  try {
+    let data = await fetch(
+      `https://api.nasa.gov/planetary/apod?api_key=${process.env.KEY}&date=${params.date}`
+    ).then((r) => r.json());
 
-  let data = await fetch(
-    `https://api.nasa.gov/planetary/apod?api_key=${process.env.KEY}&date=${params.date}`
-  ).then((r) => r.json());
+    let currentDate = (
+      await fetch(
+        `https://api.nasa.gov/planetary/apod?api_key=${process.env.KEY}`
+      ).then((r) => r.json())
+    ).date;
 
-  let currentDate = (
-    await fetch(
-      `https://api.nasa.gov/planetary/apod?api_key=${process.env.KEY}`
-    ).then((r) => r.json())
-  ).date;
-
-  return { props: { data, today: currentDate == params.date ? true : false }, revalidate: 30 };
+    return {
+      props: { data, today: currentDate == params.date ? true : false },
+      revalidate: 30,
+    };
+  } catch {
+    return { props: { notFound: true } };
+  }
 }
