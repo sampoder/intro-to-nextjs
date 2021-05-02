@@ -1,5 +1,6 @@
 import styles from "../styles/Main.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 function getYesterday(firstDate) {
   let yesterday = new Date(firstDate);
@@ -29,11 +30,18 @@ export default function MainComponents({
         </div>
         <div className={styles.buttons}>
           <Link href={`/${getYesterday(date)}`}>Previous</Link>
-          {isToday == false ? <Link href={`/${getTomorrow(date)}`}>Next</Link> : ''}
+          {isToday == false ? (
+            <Link href={`/${getTomorrow(date)}`}>Next</Link>
+          ) : (
+            ""
+          )}
         </div>
       </div>
-      <img
+      <Image
+        layout="fill"
         className={styles.img}
+        priority={true}
+        quality={100}
         src={
           url
             .replace(

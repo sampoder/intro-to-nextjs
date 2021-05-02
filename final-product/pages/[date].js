@@ -1,6 +1,7 @@
 import MainComponent from "../components/main";
 import Error from "next/error";
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 export default function App({ data, today, notFound }) {
   const router = useRouter()
@@ -10,8 +11,20 @@ export default function App({ data, today, notFound }) {
   if (router.isFallback) {
     return <div>Loading...</div>
   }
+  if (today && typeof window != 'undefined'){
+    router.replace('/')
+  }
+  let title = `${data.date}'s Astronomy Picture of the Day`
   return (
     <>
+      <Head>
+        <title>{title}</title>
+        <meta property="og:title" content={data.url} />
+        <meta name="twitter:title" content={title} />
+        <meta property="og:image" content={data.url} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={data.url} />
+      </Head>
       <MainComponent isToday={today} {...data} />
     </>
   );

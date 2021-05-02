@@ -14,6 +14,7 @@
   padding: 32px 32px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+  z-index: 999;
 }
 
 @media screen and (max-width: 478px) {
