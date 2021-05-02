@@ -1,9 +1,14 @@
 import MainComponent from "../components/main";
 import Error from "next/error";
+import { useRouter } from 'next/router'
 
 export default function App({ data, today, notFound }) {
+  const router = useRouter()
   if (notFound) {
     return <Error statusCode={"404"} />;
+  }
+  if (router.isFallback) {
+    return <div>Loading...</div>
   }
   return (
     <>
