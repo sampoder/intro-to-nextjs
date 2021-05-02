@@ -39,7 +39,6 @@ export default function MainComponents({
       </div>
       <Image
         layout="fill"
-        className={styles.img}
         priority={true}
         quality={100}
         src={

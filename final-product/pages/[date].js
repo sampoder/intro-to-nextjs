@@ -19,7 +19,7 @@ export default function App({ data, today, notFound }) {
     <>
       <Head>
         <title>{title}</title>
-        <meta property="og:title" content={data.url} />
+        <meta property="og:title" content={title} />
         <meta name="twitter:title" content={title} />
         <meta property="og:image" content={data.url} />
         <meta name="twitter:card" content="summary_large_image" />
