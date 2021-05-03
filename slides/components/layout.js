@@ -18,7 +18,7 @@ export default ({ children }) => (
             style={{
               height: "30px",
               display: "inline-block",
-              paddingTop: "4px",
+              paddingTop: "2px",
               marginLeft: "8px",
             }}
           >
@@ -32,7 +32,7 @@ export default ({ children }) => (
       color: #FF4D4D;
     }
     
-    .content{
+    .fieldset .content.jsx-1378117926{
       height: calc(100vh - 64px)
     }
    `}</style>

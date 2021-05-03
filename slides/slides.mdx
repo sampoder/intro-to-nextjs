@@ -1,5 +1,7 @@
 import Layout from "./components/layout.js";
-import { Fieldset, Avatar, Code } from "@geist-ui/react";
+import { Fieldset, Avatar, Code, Card, Grid, Tree, Image, Text } from "@geist-ui/react";
+import Highlighter from "react-syntax-highlighter";
+import { a11yDark as dark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 <Layout>
   <div
@@ -11,9 +13,10 @@ import { Fieldset, Avatar, Code } from "@geist-ui/react";
       alignItems: "center",
       height: "100%",
     }}
+    className="fullscreen"
   >
     <h1>
-      <span style={{ fontSize: "2em",}}>Introduction to</span>{" "}
+      <span style={{ fontSize: "2em",}}>Lift off with</span>{" "}
       <h1
         style={{
           fontSize: "6em",
@@ -38,6 +41,50 @@ import { Fieldset, Avatar, Code } from "@geist-ui/react";
 ---
 
 <Layout>
+  <div>
+    <h1 style={{ marginTop: "16px" }}>Table of Contents</h1>
+    <Card style={{ marginTop: "24px" }}> 🤷 What is Next.js & React?</Card>
+    <Card style={{ marginTop: "12px" }}>
+      {" "}
+      🤯 What are the key features of Next.js?
+    </Card>
+    <Card style={{ marginTop: "12px" }}>
+      {" "}
+      💻 What are the applications of Next.js?
+    </Card>
+    <Card style={{ marginTop: "12px" }}> 🏗 Live Coding Session</Card>
+    <Card style={{ marginTop: "12px" }}> 📣 Q&A / Open Discussion</Card>
+  </div>
+</Layout>
+
+---
+
+<Layout>
+  <div>
+    <h1 style={{ marginTop: "16px" }}>⚛️ Meet React</h1>
+    <Highlighter style={dark} language="javascript">{`
+ export default function App() {
+  let name = "Sam"
+  return <h1>Hello {name}</h1>
+ }  
+      `}</Highlighter>
+    <style>
+      {`
+        pre{
+          background: none!important;
+        }
+        pre code{
+          font-size: 3.25em;
+          line-height: 1.2em
+        }
+      `}
+    </style>
+  </div>
+</Layout>
+
+---
+
+<Layout>
   <div
     style={{
       textAlign: "center",
@@ -49,12 +96,389 @@ import { Fieldset, Avatar, Code } from "@geist-ui/react";
     }}
   >
     <h1>
-      <img src="https://cloud-mtxo8katv-hack-club-bot.vercel.app/0nextjs-icon-light.png" style={{ height: '300px', marginBottom: '16px'}} />
-      <span style={{ fontSize: "1em"}}><i>An all in one</i> <br /> React Framework</span>
+      <img
+        src="https://cloud-mtxo8katv-hack-club-bot.vercel.app/0nextjs-icon-light.png"
+        style={{ height: "300px", marginBottom: "16px" }}
+      />
+      <span style={{ fontSize: "1em" }}>
+        <i>An all in one</i> <br /> React Framework
+      </span>
     </h1>
   </div>
 </Layout>
 
 ---
 
-## The End
+<Layout>
+  <div
+    style={{
+      textAlign: "left",
+      height: "100%",
+      fontSize: "18px",
+    }}
+  >
+    <div>
+      <h1 style={{ marginTop: "16px", marginBottom: "24px" }}>
+        ⚡️ Variety of Rendering Options
+      </h1>
+      <Grid.Container gap={2} justify="center">
+        <Grid xs={12}>
+          <Card>
+            <h3>Static Site Generation</h3>
+            <Text>
+              <ul>
+                <li>All pages are rendered on build time</li>
+                <li>Rendered as HTML + JSON</li>
+                <li>To update pages a rebuild is required</li>
+              </ul>
+            </Text>
+          </Card>
+        </Grid>
+        <Grid xs={12}>
+          <Card>
+            <h3>Server Side Rendering</h3>
+            <Text>
+              <ul>
+                <li>When a user makes a request, the page is rendered</li>
+                <li>Makes sure all data is up to date</li>
+                <li>Can be a bit slow</li>
+              </ul>
+            </Text>
+          </Card>
+        </Grid>
+        <Grid xs={24}>
+          <Card>
+            <h3>Incremental Static Regeneration</h3>
+            <Text>
+              <ul>
+                <li>Combination of SSR & SSG</li>
+                <li>Pages are rendered on build time</li>
+                <li>
+                  Then as time goes by these pages are then re-rendered /
+                  refreshed
+                </li>
+              </ul>
+            </Text>
+          </Card>
+        </Grid>
+      </Grid.Container>
+    </div>
+  </div>
+</Layout>
+
+---
+
+<Layout>
+  <div
+    style={{
+      textAlign: "left",
+      height: "100%",
+      fontSize: "18px",
+    }}
+  >
+    <div>
+      <h1 style={{ marginTop: "16px", marginBottom: "24px" }}>
+        📂 File Based Routing
+      </h1>
+      <div>
+        <img
+          src="https://cloud-4d3sb8cgh-hack-club-bot.vercel.app/0screenshot_2021-05-03_at_9.39.26_am.png"
+          height="400px"
+          style={{ width: 'fit-content', height: '400px', transform: 'translateX(-80px)'}}
+        />
+      </div>
+    </div>
+  </div>
+</Layout>
+
+---
+
+<Layout>
+  <div
+    style={{
+      textAlign: "center",
+      display: "flex",
+      justifyContent: "center",
+      alignContent: "center",
+      alignItems: "center",
+      height: "100%",
+      background: 'url(https://miro.medium.com/max/3840/1*encF5EeouyEH8YTANng4Aw.png)'
+    }}
+  >
+    <h1>
+      <span style={{ background: 'black', borderRadius: '8px', padding: '8px'}}>
+      <Code>[planet].js</Code>
+      </span>
+    </h1>
+  </div>
+</Layout>
+
+---
+
+<Layout>
+  <div>
+    <h1 style={{ marginTop: "16px" }}>🧮 API Routes (<Code>pages/api/hello.js</Code>)</h1>
+    <Highlighter style={dark} language="javascript">{`
+ export default (req, res) => {
+   res.status(200).json({ name: 'John Doe' })
+ }
+ `}</Highlighter>
+    <style>
+      {`
+        pre{
+          background: none!important;
+        }
+        pre code{
+          font-size: 3.25em;
+          line-height: 1.2em
+        }
+      `}
+    </style>
+  </div>
+</Layout>
+
+---
+
+<Layout>
+  <div>
+    <h1 style={{ marginTop: "16px",  marginBottom: "24px" }}>🧳 Other Awesome Features</h1>
+
+
+### Other
+
+
+- 🖼 Image Optimization (Speed up your site + reduce size)
+- 🚄 Code Splitting (Speed up your site + reduce size)
+- ⌨️ TypeScript Support
+- 🔃 Fast Refresh (page auto updates in dev mode)
+- 🌈 Built in CSS Support
+- 🔐 Enviromental Variables
+- 🕸 Polyfills for Web JS APIs
+- 🌍 Internationization
+
+
+  </div>
+  <style>
+    {`
+    h3{
+      display: none;
+    }
+    li{
+      margin-left: 42px;
+    }
+    li:before{
+      margin-left: -2.5375rem!important;
+    }
+    `}
+  </style>
+</Layout>
+
+---
+<Layout>
+  <div style={{ display: 'flex', alignItems: 'center', height: 'calc(100vh - 104px)'}}>
+    <h1 style={{ marginTop: "16px",  marginBottom: "24px", textAlign: 'center', fontSize: '4em', width: '100%'}}>What can I <br /> use <Code>Next.js</Code> for?</h1>
+  </div>
+</Layout>
+
+---
+
+<Layout>
+  <div>
+    <h1 style={{ marginTop: "16px",  marginBottom: "24px" }}>👋 Landing Pages</h1>
+    <div style={{ display: 'flex'}}>
+    <Card width="400px" style={{ padding: 0, marginRight: '16px'}}>
+      <Card.Content style={{ padding: 0}}>
+      <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+      height="170px" width="398px" style={{ objectFit: 'cover' }} />
+      </Card.Content>
+      <Card.Footer>
+        <Code>hackclub.com</Code>
+      </Card.Footer>
+    </Card>
+    <Card width="400px" style={{ padding: 0}}>
+      <Card.Content style={{ padding: 0}}>
+      <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+      height="170px" width="398px" style={{ objectFit: 'cover' }} />
+      </Card.Content>
+      <Card.Footer>
+        <Code>hackclub.com</Code>
+      </Card.Footer>
+    </Card></div>
+    <div style={{ display: 'flex', marginTop: '16px'}}>
+    <Card width="400px" style={{ padding: 0, marginRight: '16px'}}>
+      <Card.Content style={{ padding: 0}}>
+      <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+      height="170px" width="398px" style={{ objectFit: 'cover' }} />
+      </Card.Content>
+      <Card.Footer>
+        <Code>hackclub.com</Code>
+      </Card.Footer>
+    </Card>
+    <Card width="400px" style={{ padding: 0}}>
+      <Card.Content style={{ padding: 0}}>
+      <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+      height="170px" width="398px" style={{ objectFit: 'cover' }} />
+      </Card.Content>
+      <Card.Footer>
+        <Code>hackclub.com</Code>
+      </Card.Footer>
+    </Card></div>
+  </div>
+  <style>
+
+  </style>
+</Layout>
+
+---
+
+<Layout>
+  <div>
+    <h1 style={{ marginTop: "16px",  marginBottom: "24px" }}>🛍 E-commerce Stores</h1>
+    <div style={{ display: 'flex'}}>
+    <Card width="400px" style={{ padding: 0, marginRight: '16px'}}>
+      <Card.Content style={{ padding: 0}}>
+      <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+      height="170px" width="398px" style={{ objectFit: 'cover' }} />
+      </Card.Content>
+      <Card.Footer>
+        <Code>hackclub.com</Code>
+      </Card.Footer>
+    </Card>
+    <Card width="400px" style={{ padding: 0}}>
+      <Card.Content style={{ padding: 0}}>
+      <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+      height="170px" width="398px" style={{ objectFit: 'cover' }} />
+      </Card.Content>
+      <Card.Footer>
+        <Code>hackclub.com</Code>
+      </Card.Footer>
+    </Card></div>
+    <div style={{ display: 'flex', marginTop: '16px'}}>
+    <Card width="400px" style={{ padding: 0, marginRight: '16px'}}>
+      <Card.Content style={{ padding: 0}}>
+      <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+      height="170px" width="398px" style={{ objectFit: 'cover' }} />
+      </Card.Content>
+      <Card.Footer>
+        <Code>hackclub.com</Code>
+      </Card.Footer>
+    </Card>
+    <Card width="400px" style={{ padding: 0}}>
+      <Card.Content style={{ padding: 0}}>
+      <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+      height="170px" width="398px" style={{ objectFit: 'cover' }} />
+      </Card.Content>
+      <Card.Footer>
+        <Code>hackclub.com</Code>
+      </Card.Footer>
+    </Card></div>
+  </div>
+  <style>
+
+  </style>
+</Layout>
+
+---
+
+<Layout>
+  <div>
+    <h1 style={{ marginTop: "16px",  marginBottom: "24px" }}>🧑‍💻 Web Apps</h1>
+    <div style={{ display: 'flex'}}>
+    <Card width="400px" style={{ padding: 0, marginRight: '16px'}}>
+      <Card.Content style={{ padding: 0}}>
+      <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+      height="170px" width="398px" style={{ objectFit: 'cover' }} />
+      </Card.Content>
+      <Card.Footer>
+        <Code>hackclub.com</Code>
+      </Card.Footer>
+    </Card>
+    <Card width="400px" style={{ padding: 0}}>
+      <Card.Content style={{ padding: 0}}>
+      <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+      height="170px" width="398px" style={{ objectFit: 'cover' }} />
+      </Card.Content>
+      <Card.Footer>
+        <Code>hackclub.com</Code>
+      </Card.Footer>
+    </Card></div>
+    <div style={{ display: 'flex', marginTop: '16px'}}>
+    <Card width="400px" style={{ padding: 0, marginRight: '16px'}}>
+      <Card.Content style={{ padding: 0}}>
+      <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+      height="170px" width="398px" style={{ objectFit: 'cover' }} />
+      </Card.Content>
+      <Card.Footer>
+        <Code>hackclub.com</Code>
+      </Card.Footer>
+    </Card>
+    <Card width="400px" style={{ padding: 0}}>
+      <Card.Content style={{ padding: 0}}>
+      <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+      height="170px" width="398px" style={{ objectFit: 'cover' }} />
+      </Card.Content>
+      <Card.Footer>
+        <Code>hackclub.com</Code>
+      </Card.Footer>
+    </Card></div>
+  </div>
+  <style>
+
+  </style>
+</Layout>
+
+---
+
+<Layout>
+  <div>
+    <h1 style={{ marginTop: "16px",  marginBottom: "24px" }}>✍️ Blogs</h1>
+    <div style={{ display: 'flex'}}>
+    <Card width="400px" style={{ padding: 0, marginRight: '16px'}}>
+      <Card.Content style={{ padding: 0}}>
+      <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+      height="170px" width="398px" style={{ objectFit: 'cover' }} />
+      </Card.Content>
+      <Card.Footer>
+        <Code>hackclub.com</Code>
+      </Card.Footer>
+    </Card>
+    <Card width="400px" style={{ padding: 0}}>
+      <Card.Content style={{ padding: 0}}>
+      <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+      height="170px" width="398px" style={{ objectFit: 'cover' }} />
+      </Card.Content>
+      <Card.Footer>
+        <Code>hackclub.com</Code>
+      </Card.Footer>
+    </Card></div>
+    <div style={{ display: 'flex', marginTop: '16px'}}>
+    <Card width="400px" style={{ padding: 0, marginRight: '16px'}}>
+      <Card.Content style={{ padding: 0}}>
+      <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+      height="170px" width="398px" style={{ objectFit: 'cover' }} />
+      </Card.Content>
+      <Card.Footer>
+        <Code>hackclub.com</Code>
+      </Card.Footer>
+    </Card>
+    <Card width="400px" style={{ padding: 0}}>
+      <Card.Content style={{ padding: 0}}>
+      <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+      height="170px" width="398px" style={{ objectFit: 'cover' }} />
+      </Card.Content>
+      <Card.Footer>
+        <Code>hackclub.com</Code>
+      </Card.Footer>
+    </Card></div>
+  </div>
+  <style>
+
+  </style>
+</Layout>
+
+---
+<Layout>
+  <div style={{ display: 'flex', alignItems: 'center', height: 'calc(100vh - 104px)'}}>
+    <h1 style={{ marginTop: "16px",  marginBottom: "24px", textAlign: 'center', fontSize: '4em', width: '100%'}}>Let's get coding!</h1>
+  </div>
+</Layout>

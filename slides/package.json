@@ -6,6 +6,8 @@
     "mdx-deck": "^4.1.1"
   },
   "dependencies": {
-    "@geist-ui/react": "^2.1.5"
+    "@geist-ui/react": "^2.1.5",
+    "@mapbox/rehype-prism": "^0.6.0",
+    "react-syntax-highlighter": "^15.4.3"
   }
 }
