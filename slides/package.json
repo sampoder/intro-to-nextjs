@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "mdx-deck slides.mdx",
-    "build": "mdx-deck build deck.mdx",
+    "build": "mdx-deck build slides.mdx",
     "help": "mdx-deck"
   },
   "devDependencies": {
