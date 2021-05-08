@@ -13,4 +13,4 @@ This repository contains the following:
 
 Coming soon.
 
-**Want me to deliver this workshop at your hackathon, conference etc.? Sure thing!** Drop me an email @ [sam@sampoder.com](mailto:sam@sampoder.com).
+**Want me to deliver this workshop at your hackathon, conference, et cetera? Sure thing!** Drop me an email at [sam@sampoder.com](mailto:sam@sampoder.com).
