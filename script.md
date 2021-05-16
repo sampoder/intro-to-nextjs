@@ -1,16 +1,5 @@
 # 🚀 Lift off with Next.js
 
-- Welcome to this workshop!
-- Today we're learning all about Next.js
-- My name is Sam
-   - High schooler in Singapore
-   - Passionate open source dev
-   - Like making interactive expiriences
-   - Next.js is a big part of that
-- Before we get started we need to install Nodejs: https://nodejs.org/en/
-
----
-
 ### Table of Contents
 
 1. What is Next.js & React?
@@ -317,3 +306,6 @@ module.exports = {
 
 - [STRETCH] Deploy to Vercel
 
+### Now Head Back to Slides
+
+Ask for a star on GitHub :)
