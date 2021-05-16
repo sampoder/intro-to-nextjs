@@ -10,7 +10,7 @@ export default ({ children }) => (
       {children}
       <Fieldset.Footer style={{ padding: "3px 32px", height: "64px" }}>
         <Fieldset.Footer.Status>
-          <Code>What the Hack 2021</Code>
+          <Code>Devhost 2021</Code>
         </Fieldset.Footer.Status>
         <Fieldset.Footer.Actions>
           <Avatar src="https://github.com/sampoder.png" />
