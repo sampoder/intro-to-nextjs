@@ -39,7 +39,8 @@ export default function MainComponents({
               "https://www.youtube.com/embed/",
               "https://img.youtube.com/vi/"
             )
-            .replace("?rel=0", "") + "/maxresdefault.jpg"
+            .replace("?rel=0", "") +
+          (url.includes("youtube") ? "/maxresdefault.jpg" : "")
         }
       />
     </div>
