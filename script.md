@@ -86,9 +86,9 @@
 - Load up our boilerplate:
 
 ```javascript
-yarn create next-app -e github.com/sampoder/intro-to-nextjs
+yarn create next-app -e https://github.com/sampoder/intro-to-nextjs/tree/main/boilerplate
 
-npx create-next-app
+npx create-next-app -e https://github.com/sampoder/intro-to-nextjs/tree/main/boilerplate
 ```
 
 - `cd` into our app's directory
