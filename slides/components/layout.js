@@ -10,7 +10,7 @@ export default ({ children }) => (
       {children}
       <Fieldset.Footer style={{ padding: "3px 32px", height: "64px" }}>
         <Fieldset.Footer.Status>
-          <Code>NeoHacks</Code>
+          <Code>Mini CodeDay</Code>
         </Fieldset.Footer.Status>
         <Fieldset.Footer.Actions>
           <Avatar src="https://github.com/sampoder.png" />
