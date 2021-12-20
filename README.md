@@ -9,8 +9,4 @@ This repository contains the following:
 - `final-product`: the final product we will be building. View it [here](http://product.intro-to-nextjs.sampoder.com/).
 - `slides`: MDX slide deck to be used when presenting. Gives an introduction to Next.js.
 
-### Recordings of this workshop
-
-Coming soon.
-
 **Want me to deliver this workshop at your hackathon, conference, et cetera? Sure thing!** Drop me an email at [sam@sampoder.com](mailto:sam@sampoder.com).
