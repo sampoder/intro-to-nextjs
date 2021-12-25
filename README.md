@@ -1,6 +1,6 @@
 # 💈 Intro to Next.js Workshop
 
-A hands on workshop for those getting started with Next.js. In this workshop your learn the framework through building a website that uses many of Next.js’s core features such as API Routes, ISR & Dynamic Routing.
+A hands on workshop for those getting started with Next.js. In this workshop your learn the framework through building a website that uses a couple of Next.js’s core features such as API Routes, ISR & Dynamic Routing.
 
 This repository contains the following:
 
